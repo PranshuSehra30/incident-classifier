@@ -31,7 +31,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY)
                 .body(new Dto.ErrorResponse(422, "Processing Error", ex.getMessage()));
     }
-
+//dev code
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Dto.ErrorResponse> handleValidation(MethodArgumentNotValidException ex) {
         String details = ex.getBindingResult().getFieldErrors().stream()
